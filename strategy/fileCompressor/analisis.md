@@ -66,5 +66,24 @@ paymentSystem.pay(100);
 Al resolver este ejercicio, debes aplicar el patrón de diseño Strategy para separar la lógica de pago de diferentes métodos de pago en clases separadas y permitir que la clase PaymentSystem cambie su comportamiento en tiempo de ejecución según el método de pago que se le asigne. De esta manera, podrás agregar nuevos métodos de pago de manera más sencilla y mantenible.
 
 
+# Ejercicio más difícil: Sistema de notificaciones
+
+Se necesita implementar un sistema de notificaciones que permita a los usuarios recibir notificaciones a través de diferentes canales, como correo electrónico, SMS o mensaje push.
+
+Se te ha proporcionado la siguiente interface de NotificationChannel:
+
+```java
+interface NotificationChannel {
+  public void send(String message);
+}
+```
+Esta interface tiene un método "send" que recibe un mensaje y lo envía a través del canal de notificación correspondiente.
+
+Tu tarea es implementar las siguientes clases:
+
+EmailNotification: clase que implementa la interface NotificationChannel y que envía una notificación a través de correo electrónico.
+SMSNotification: clase que implementa la interface NotificationChannel y que envía una notificación a través de SMS.
+PushNotification: clase que implementa la interface NotificationChannel y que envía una notificación a través de un mensaje push.
+Luego, debes crear una clase NotificationSystem que tenga una lista de canales de notificación y un método "addChannel" para agregar un nuevo canal de notificación a la lista. La clase NotificationSystem también debe tener un método "send" que envíe el mensaje
 
 
