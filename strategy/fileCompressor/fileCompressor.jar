@@ -1,0 +1,23 @@
+import java.io.File;
+
+class Compressor {
+  public void compressZip(File file) {
+    // Implementación del algoritmo de compresión ZIP para el archivo dado
+  }
+
+  public void compressRar(File file) {
+    // Implementación del algoritmo de compresión RAR para el archivo dado
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Compressor compressor = new Compressor();
+    File file = new File("file.txt");
+
+    // Comprimir el archivo utilizando el algoritmo ZIP
+    compressor.compressZip(file);
+
+    // Comprimir el archivo utilizando el algoritmo RAR
+    compressor.compressRar(file);
+  }

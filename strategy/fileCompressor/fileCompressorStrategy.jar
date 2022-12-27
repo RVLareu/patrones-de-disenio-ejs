@@ -1,0 +1,44 @@
+import java.io.File;
+
+interface CompressionStrategy {
+  public void compress(File file);
+}
+
+class ZipCompressionStrategy implements CompressionStrategy {
+  public void compress(File file) {
+    // Implementación del algoritmo de compresión ZIP para el archivo dado
+  }
+}
+
+class RarCompressionStrategy implements CompressionStrategy {
+  public void compress(File file) {
+    // Implementación del algoritmo de compresión RAR para el archivo dado
+  }
+}
+
+class Compressor {
+  private CompressionStrategy strategy;
+
+  public void setCompressionStrategy(CompressionStrategy strategy) {
+    this.strategy = strategy;
+  }
+
+  public void compress(File file) {
+    strategy.compress(file);
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Compressor compressor = new Compressor();
+    File file = new File("file.txt");
+
+    // Comprimir el archivo utilizando el algoritmo ZIP
+    compressor.setCompressionStrategy(new ZipCompressionStrategy());
+    compressor.compress(file);
+
+    // Comprimir el archivo utilizando el algoritmo RAR
+    compressor.setCompressionStrategy(new RarCompressionStrategy());
+    compressor.compress(file);
+  }
+}

@@ -1,0 +1,26 @@
+@Test
+public void testCreditCardPayment() {
+  PaymentSystem paymentSystem = new PaymentSystem();
+  PaymentMethod paymentMethodMock = mock(CreditCardPayment.class);
+  paymentSystem.setPaymentMethod(paymentMethodMock);
+  paymentSystem.pay(100);
+  verify(paymentMethodMock).pay(100);
+}
+
+@Test
+public void testDebitCardPayment() {
+  PaymentSystem paymentSystem = new PaymentSystem();
+  PaymentMethod paymentMethodMock = mock(DebitCardPayment.class);
+  paymentSystem.setPaymentMethod(paymentMethodMock);
+  paymentSystem.pay(50);
+  verify(paymentMethodMock).pay(50);
+}
+
+@Test
+public void testPayPalPayment() {
+  PaymentSystem paymentSystem = new PaymentSystem();
+  PaymentMethod paymentMethodMock = mock(PayPalPayment.class);
+  paymentSystem.setPaymentMethod(paymentMethodMock);
+  paymentSystem.pay(25);
+  verify(paymentMethodMock).pay(25);
+}
